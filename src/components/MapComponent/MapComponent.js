@@ -1,5 +1,6 @@
-import React from "react";
+import { memo, useCallback, useEffect, useState } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import axios from "axios";
 
 const containerStyle = {
   width: "600px",
@@ -12,35 +13,55 @@ const center = {
 };
 
 function MyComponent() {
+  const [data, setData] = useState(null);
+
+  async function fetchData() {
+    try {
+      let response = await axios.get(
+        "https://api.gruposbf.com.br/geolocation-api/stores"
+      );
+
+      let dataResponse = await response.data;
+
+      console.log(dataResponse);
+
+      setData(dataResponse);
+    } catch (err) {
+      console.error("Erro na requisição:", err);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyD5RSAL7ai4UITr-iwZS-Y1WA8sjrvcRzM",
   });
 
-  const [map, setMap] = React.useState(null);
+  const [map, setMap] = useState(null);
 
-  const onLoad = React.useCallback(function callback(map) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
+  const onLoad = useCallback(
+    function callback(map) {
+      data.forEach(
+        (d) =>
+          new window.google.maps.Marker({
+            position: {
+              lat: parseFloat(d.latitude),
+              lng: parseFloat(d.longitude),
+            },
+            map,
+            title: d.name,
+          })
+      );
 
-    new window.google.maps.Marker({
-      position: center,
-      map,
-      title: "Hello World!",
-    });
+      setMap(map);
+    },
+    [data]
+  );
 
-    new window.google.maps.Marker({
-      position: {
-        lat: -22.98303,
-        lng: -43.45552,
-      },
-      map,
-      title: "Hello World!",
-    });
-
-    setMap(map);
-  }, []);
-
-  const onUnmount = React.useCallback(function callback(map) {
+  const onUnmount = useCallback(function callback(map) {
     setMap(null);
   }, []);
 
@@ -51,13 +72,10 @@ function MyComponent() {
       zoom={10}
       onLoad={onLoad}
       onUnmount={onUnmount}
-    >
-      {/* Child components, such as markers, info windows, etc. */}
-      <></>
-    </GoogleMap>
+    />
   ) : (
-    <>Loading...</>
+    <h1>Loading...</h1>
   );
 }
 
-export default React.memo(MyComponent);
+export default memo(MyComponent);
