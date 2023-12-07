@@ -1,10 +1,10 @@
 import "./App.css";
-import MapComponent from "./components/MapComponent/MapComponent";
+import Stores from "./components/Stores/Stores";
 
 function App() {
   return (
     <div className="App">
-      <MapComponent />
+      <Stores />
     </div>
   );
 }

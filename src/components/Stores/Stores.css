@@ -1,0 +1,9 @@
+.stores {
+  display: flex;
+}
+
+.km-store {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
