@@ -1,0 +1,128 @@
+footer {
+  padding: 40px;
+  background: rgba(26, 26, 26, 1);
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+footer ul {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+footer a {
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+footer details a {
+  display: block;
+  margin: 0 0 8px;
+}
+
+footer ul li a,
+footer span {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+footer a,
+footer span,
+footer > div {
+  color: rgba(255, 255, 255, 1);
+}
+
+.footer-wrapper section {
+  flex-direction: column;
+  max-width: 224px;
+  width: 100%;
+}
+
+.footer-wrapper hr {
+  margin: 34px 0;
+  width: 100%;
+  border-color: rgba(77, 77, 77, 1);
+}
+
+.footer-wrapper h4,
+.useful-links a {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.misc h4 {
+  margin: 0px 0 16px;
+}
+
+.misc ul {
+  margin: 0 0 37px;
+}
+
+.socials a {
+  margin: 0 13px 0 0;
+}
+
+.copyright {
+  align-items: center;
+}
+
+.copyright span {
+  max-width: 464px;
+  width: 100%;
+  text-align: right;
+}
+
+.copyright ul > li > a {
+  margin: 0 48px 0 0;
+}
+
+.footer-wrapper,
+.footer-wrapper section,
+footer .socials,
+footer .payments,
+.copyright,
+.copyright > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-wrapper,
+footer .copyright {
+  justify-content: space-between;
+}
+
+details > summary {
+  list-style: none;
+}
+
+details > summary::marker,
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+footer details {
+  pointer-events: none;
+}
+
+footer details a {
+  pointer-events: all;
+}
+
+@media screen and (max-width: 1024px) {
+  details > summary {
+    list-style: revert;
+  }
+
+  details > summary::marker,
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  footer details {
+    pointer-events: initial;
+  }
+}

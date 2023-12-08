@@ -29,7 +29,6 @@ const Offers = () => {
     <Swiper
       slidesPerView={1}
       navigation
-      onSlideChange={() => console.log("slide change")}
       grabCursor={true}
       mousewheel={true}
       keyboard={{
