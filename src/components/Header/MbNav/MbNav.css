@@ -1,0 +1,19 @@
+.mb-nav {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .mb-wrapper {
+    display: none;
+  }
+
+  .mb-nav {
+    display: flex;
+  }
+
+  .mb-wrapper.open {
+    display: block;
+  }
+}

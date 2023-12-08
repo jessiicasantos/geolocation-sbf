@@ -1,0 +1,28 @@
+.sub-links {
+  margin: 0 0 15px;
+}
+
+.sub-links ul {
+  display: flex;
+}
+
+.sub-header .logos a {
+  margin: 0 16px 0 0;
+}
+
+.sub-links a {
+  position: relative;
+  font-size: 12px;
+  font-weight: 400;
+  color: #737373;
+  padding: 0 16px 0;
+}
+
+.sub-links li:not(:last-of-type) a::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}

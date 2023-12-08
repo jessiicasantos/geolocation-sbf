@@ -1,0 +1,29 @@
+.main-header input {
+  border-radius: 8px;
+  border: 1px solid rgba(247, 247, 247, 1);
+  padding: 12px 12px 12px 44px;
+  font-size: 14px;
+  font-weight: 400;
+  background-position: 8px center;
+}
+
+.search-store {
+  display: flex;
+  max-width: 590px;
+  margin: 0 auto;
+}
+
+.search-store input {
+  margin: 0 24px 0 0;
+  padding: 12px 12px 12px 40px;
+  width: 100%;
+  border-radius: 200px;
+  border: 1px solid rgba(214, 214, 214, 1);
+  background-position: 16px center;
+}
+
+.main-header input,
+.search-store input {
+  background-image: url("../../assets/img/icon_lupa.svg");
+  background-repeat: no-repeat;
+}

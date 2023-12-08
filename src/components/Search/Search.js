@@ -1,7 +1,9 @@
-const Search = () => (
-  <div className="search-store">
-    <input id="user-address" type="text" placeholder="Enter a location" />
-    <button>Buscar</button>
+import "./Search.css";
+
+const Search = ({ txt, placeholder, id, className }) => (
+  <div className={className}>
+    <input id={id} type="text" placeholder={placeholder} />
+    {txt ? <button className="black-btn">{txt}</button> : ""}
   </div>
 );
 

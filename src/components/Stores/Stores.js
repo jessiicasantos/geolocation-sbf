@@ -163,14 +163,20 @@ const Stores = () => {
 
   return (
     <>
-      {isLoaded && <Search map={map} />}
+      {isLoaded && (
+        <Search
+          id="user-address"
+          map={map}
+          className="search-store"
+          txt="Buscar"
+          placeholder="Enter a location"
+        />
+      )}
       {userPlace && (
         <div className="stores">
-          <div className="search-store">
+          <div className="cards-stores">
             <Order />
-            {stores && (
-              <StoreCard /* mapCenter={map.getCenter()} */ store={stores} />
-            )}
+            {stores && <StoreCard store={stores} />}
           </div>
           <div className="map-store">
             {isLoaded && <MapStores onLoad={onLoad} onUnmount={onUnmount} />}

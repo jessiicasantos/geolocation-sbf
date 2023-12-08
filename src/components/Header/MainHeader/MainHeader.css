@@ -1,0 +1,13 @@
+.header-links {
+  display: flex;
+}
+
+.main-header .header-links a {
+  padding: 24px 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.main-header > a > img {
+  max-width: 67px;
+}
