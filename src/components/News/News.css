@@ -1,0 +1,17 @@
+.news {
+  margin: 0 auto;
+  max-width: 559px;
+  width: 100%;
+}
+
+.news .btn-dark {
+  text-decoration: none;
+}
+
+.news h3 {
+  margin: 16px 0 4px;
+}
+
+.news p {
+  line-height: 1.4;
+}

@@ -10,7 +10,7 @@
 .search-store {
   display: flex;
   max-width: 590px;
-  margin: 40px auto;
+  margin: 40px auto 110px;
 }
 
 .search-store input {
