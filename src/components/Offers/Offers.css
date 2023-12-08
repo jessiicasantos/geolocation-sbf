@@ -1,0 +1,22 @@
+.swiper.offers {
+  margin: 40px auto;
+  max-width: 784px;
+}
+
+.swiper.offers .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper.offers .swiper-button-next:after,
+.swiper.offers .swiper-button-prev:after {
+  color: rgba(26, 26, 26, 1);
+  font-size: 16px;
+  font-weight: 900;
+  text-shadow: 0 0 rgba(26, 26, 26, 1);
+}
+
+.swiper.offers span {
+  margin: 0 24px;
+}

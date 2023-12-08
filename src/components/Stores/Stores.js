@@ -163,6 +163,7 @@ const Stores = () => {
 
   return (
     <>
+      <h1>Lojas</h1>
       {isLoaded && (
         <Search
           id="user-address"

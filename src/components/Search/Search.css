@@ -10,7 +10,7 @@
 .search-store {
   display: flex;
   max-width: 590px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 .search-store input {
@@ -20,6 +20,9 @@
   border-radius: 200px;
   border: 1px solid rgba(214, 214, 214, 1);
   background-position: 16px center;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
 }
 
 .main-header input,
