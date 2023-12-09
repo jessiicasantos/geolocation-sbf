@@ -1,0 +1,75 @@
+.cards-stores {
+  margin: 0 34px 0 0;
+  padding: 0 15px 0 0;
+  max-height: 63vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cards-stores::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cards-stores::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cards-stores::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+  border-radius: 10px;
+}
+
+.cards-stores::-webkit-scrollbar-thumb:hover {
+  background: #bebebe;
+}
+
+.card-store:not(:first-of-type) {
+  padding: 32px 15px 0 0;
+}
+
+.card-store {
+  text-align: left;
+}
+
+.card-store h3 {
+  margin: 16px 0;
+}
+
+.card-store img {
+  margin: 0 4px 0 0;
+}
+
+.card-store span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.open-map {
+  display: none;
+  padding: 8px 0 20px;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card-store h5 {
+  font-size: 14px;
+}
+
+.card-store p {
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
+.card-store p.available {
+  color: rgba(0, 102, 17, 1);
+  font-weight: 700;
+}
+
+.card-store h5,
+.card-store p {
+  max-width: 307px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(115, 115, 115, 1);
+}

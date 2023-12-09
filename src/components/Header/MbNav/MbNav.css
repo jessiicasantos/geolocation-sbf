@@ -7,6 +7,18 @@
 @media screen and (max-width: 1024px) {
   .mb-wrapper {
     display: none;
+    position: fixed;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #f0f0f0;
+    z-index: 9;
   }
 
   .mb-nav {
@@ -14,6 +26,32 @@
   }
 
   .mb-wrapper.open {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 0;
+  }
+
+  header > div:not(.mb-wrapper, .mb-nav),
+  header nav,
+  .sub-header,
+  .sub-header .sub-links ul,
+  .header-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sub-links ul li:not(:last-of-type) a::after {
+    content: "";
+  }
+
+  .sub-header .sub-links ul,
+  .header-links {
+    padding-inline-start: 0;
   }
 }

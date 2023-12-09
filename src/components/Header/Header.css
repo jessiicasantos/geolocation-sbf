@@ -1,3 +1,7 @@
+header {
+  padding: 21px 40px 0;
+}
+
 header > div:not(.mb-wrapper, .mb-nav),
 header nav,
 .sub-header {

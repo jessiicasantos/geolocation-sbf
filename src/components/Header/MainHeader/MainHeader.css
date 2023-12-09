@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.main-header {
+  padding: 15px 0 0;
+}
+
 .main-header .header-links a {
   padding: 24px 12px;
   font-size: 16px;

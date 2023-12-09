@@ -114,7 +114,27 @@ footer details a {
 
 @media screen and (max-width: 1024px) {
   details > summary {
-    list-style: revert;
+    display: flex;
+    border-color: #da291c;
+    border-radius: 15px;
+    content: "+";
+    color: #fff;
+    float: left;
+    font-size: 1em;
+    font-weight: bold;
+    margin: -2px 10px 0 0;
+    padding: 1px 0 3px 0;
+    text-align: center;
+    width: 30px;
+  }
+
+  details > summary:after {
+    content: "+";
+    margin: 0 0 0 10px;
+  }
+
+  details[open] > summary:after {
+    content: "-";
   }
 
   details > summary::marker,

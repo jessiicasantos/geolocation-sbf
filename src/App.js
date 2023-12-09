@@ -8,8 +8,8 @@ import Stores from "./components/Stores/Stores";
 function App() {
   return (
     <div className="App">
+      <Header />
       <div className="container">
-        <Header />
         <Offers />
         <Stores />
         <News />

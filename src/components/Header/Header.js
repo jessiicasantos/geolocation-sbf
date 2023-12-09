@@ -9,7 +9,6 @@ const Header = () => {
   const isOpen = open ? " open" : "";
 
   const handleIsOpen = () => {
-    console.log(!open);
     setIsOpen(!open);
   };
 

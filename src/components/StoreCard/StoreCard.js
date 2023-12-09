@@ -1,4 +1,5 @@
-import PinMapa from "../../assets/img/icon_pin_mapa.svg";
+import "./StoreCard.css";
+import PinLink from "../../assets/img/icon_pin_link.svg";
 
 const StoreCard = ({ store, mapCenter, ...props }) => {
   return (
@@ -10,7 +11,7 @@ const StoreCard = ({ store, mapCenter, ...props }) => {
             <span>{s.distance} km</span>
           </div>
           <button className="open-map">
-            <img src={PinMapa} alt="" />
+            <img src={PinLink} alt="Pin Mapa" />
             Ver no mapa
           </button>
           <div>
@@ -20,7 +21,7 @@ const StoreCard = ({ store, mapCenter, ...props }) => {
               Segunda a Sábado 10h às 22h | Domingo 11h às 20h
             </p>
           </div>
-          <p>Disponível em 4 dias úteis</p>
+          <p className="available">Disponível em 4 dias úteis</p>
         </div>
       ))}
     </>

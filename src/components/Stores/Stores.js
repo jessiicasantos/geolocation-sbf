@@ -3,11 +3,11 @@ import { useCallback, useEffect, useState } from "react";
 import Search from "../Search/Search";
 import axios from "axios";
 import StoreCard from "../StoreCard/StoreCard";
-import Order from "../Order/Order";
 import { useJsApiLoader } from "@react-google-maps/api";
 import MapStores from "../MapStores/MapStores";
 import { config } from "../../lib/config";
 import { distance } from "../../lib/helpers";
+import PinMapa from "../../assets/img/icon_pin_mapa.svg";
 
 const Stores = () => {
   const [sortedStores, setSortedStores] = useState(false);
@@ -134,7 +134,7 @@ const Stores = () => {
               lat: parseFloat(d.latitude),
               lng: parseFloat(d.longitude),
             },
-            icon: "http://localhost:3000/static/media/icon_pin_mapa.2497f761bb2316d87b542f150279deea.svg",
+            icon: PinMapa,
             map,
             title: d.name,
           });
@@ -176,7 +176,6 @@ const Stores = () => {
       {userPlace && (
         <div className="stores">
           <div className="cards-stores">
-            <Order />
             {stores && <StoreCard store={stores} />}
           </div>
           <div className="map-store">

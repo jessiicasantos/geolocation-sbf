@@ -45,6 +45,20 @@ button {
   font-weight: 700;
   line-height: 16px;
   border-radius: 50px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-dark:hover {
+  background: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
+}
+
+.main-header .header-links a:hover,
+.sub-links a:hover,
+footer a:hover {
+  text-decoration: underline;
+  text-underline-position: under;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -74,5 +88,11 @@ button {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 15px 40px;
   }
 }

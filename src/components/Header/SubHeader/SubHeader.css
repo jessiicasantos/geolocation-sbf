@@ -3,6 +3,7 @@
 }
 
 .sub-links ul {
+  margin: 0;
   display: flex;
 }
 
@@ -16,6 +17,10 @@
   font-weight: 400;
   color: #737373;
   padding: 0 16px 0;
+}
+
+.sub-links li:last-of-type a {
+  padding: 0 0 0 16px;
 }
 
 .sub-links li:not(:last-of-type) a::after {

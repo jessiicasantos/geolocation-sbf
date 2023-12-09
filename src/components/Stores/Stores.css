@@ -1,5 +1,10 @@
 .stores {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-height: 600px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .km-store {
@@ -12,4 +17,22 @@
   font-weight: 500;
   font-size: 32px;
   line-height: 38px;
+}
+
+.cards-stores,
+.map-store {
+  max-width: 50vw;
+  width: fit-content;
+}
+
+@media screen and (max-width: 1024px) {
+  .stores {
+    flex-direction: column-reverse;
+    max-height: none;
+  }
+  .stores .cards-stores,
+  .stores .map-store {
+    max-width: 100%;
+    margin: 0;
+  }
 }
