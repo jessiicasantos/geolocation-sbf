@@ -28,11 +28,23 @@
 @media screen and (max-width: 1024px) {
   .stores {
     flex-direction: column-reverse;
+    align-items: center;
     max-height: none;
   }
+
   .stores .cards-stores,
   .stores .map-store {
     max-width: 100%;
     margin: 0;
+  }
+
+  .stores > .map-store {
+    display: none;
+  }
+
+  .stores .cards-stores {
+    padding: 0 15px;
+    max-width: 600px;
+    width: 100%;
   }
 }

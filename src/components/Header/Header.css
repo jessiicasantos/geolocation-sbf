@@ -28,3 +28,8 @@ header nav,
   height: 100%;
   object-fit: contain;
 }
+
+.mb-wrapper,
+.mb-nav {
+  width: 100%;
+}

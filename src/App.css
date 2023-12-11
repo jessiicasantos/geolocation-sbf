@@ -39,8 +39,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 1);
-  color: rgba(255, 255, 255, 1);
+  background: #000000;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
@@ -49,9 +49,9 @@ button {
 }
 
 .btn-dark:hover {
-  background: rgba(255, 255, 255, 1);
-  color: rgba(0, 0, 0, 1);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 1);
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0 0 2px #000000;
 }
 
 .main-header .header-links a:hover,

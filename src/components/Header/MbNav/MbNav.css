@@ -2,6 +2,7 @@
   display: none;
   justify-content: space-between;
   align-items: center;
+  z-index: 99;
 }
 
 @media screen and (max-width: 1024px) {
@@ -18,7 +19,7 @@
     height: 100%;
     overflow: hidden;
     background: #f0f0f0;
-    z-index: 9;
+    z-index: 99;
   }
 
   .mb-nav {

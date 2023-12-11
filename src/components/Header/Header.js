@@ -14,11 +14,13 @@ const Header = () => {
 
   return (
     <header className="header-wrapper">
-      <div className={`mb-wrapper${isOpen}`}>
-        <SubHeader />
-        <MainHeader />
+      <div className="mb-nav-wrapper">
+        <div className={`mb-wrapper${isOpen}`}>
+          <SubHeader />
+          <MainHeader />
+        </div>
+        <MbNav handleIsOpen={handleIsOpen} />
       </div>
-      <MbNav handleIsOpen={handleIsOpen} />
     </header>
   );
 };

@@ -44,7 +44,7 @@ const Payments = () => {
       <ul className="payments">
         {paymentsData.map((payment, i) => (
           <li key={`payment=${i}`}>
-            <a href="http://localhost:3000/">
+            <a href="http://localhost:3000/" target="_blank" rel="noreferrer">
               <img src={payment.imgUrl} alt={payment.alt} />
             </a>
           </li>

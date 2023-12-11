@@ -1,6 +1,6 @@
 .main-header input {
   border-radius: 8px;
-  border: 1px solid rgba(247, 247, 247, 1);
+  border: 1px solid #f7f7f7;
   padding: 12px 12px 12px 44px;
   font-size: 14px;
   font-weight: 400;
@@ -18,7 +18,7 @@
   padding: 12px 12px 12px 40px;
   width: 100%;
   border-radius: 200px;
-  border: 1px solid rgba(214, 214, 214, 1);
+  border: 1px solid #d6d6d6;
   background-position: 16px center;
   font-size: 16px;
   font-weight: 400;
@@ -29,4 +29,16 @@
 .search-store input {
   background-image: url("../../assets/img/icon_lupa.svg");
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1024px) {
+  .search-store {
+    margin: 40px auto 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-store .btn-dark {
+    display: none;
+  }
 }

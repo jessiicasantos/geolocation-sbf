@@ -14,7 +14,7 @@ const InfoWindow = () => (
   </div>
 );
 
-const MapStores = ({ onLoad, onUnmount, mapCenter }) => {
+const MapStores = ({ onLoad, onUnmount }) => {
   return (
     <>
       <GoogleMap

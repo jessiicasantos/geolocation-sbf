@@ -8,12 +8,28 @@ import MapStores from "../MapStores/MapStores";
 import { config } from "../../lib/config";
 import { distance } from "../../lib/helpers";
 import PinMapa from "../../assets/img/icon_pin_mapa.svg";
+import ModalMap from "../ModalMap/ModalMap";
+import { createPortal } from "react-dom";
 
 const Stores = () => {
   const [sortedStores, setSortedStores] = useState(false);
   const [stores, setStores] = useState(null);
   const [map, setMap] = useState(null);
   const [userPlace, setUserPlace] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [showComponent, setShowComponent] = useState(false);
+
+  const handleClick = () => {
+    setShowComponent(!showComponent);
+  };
+
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 
   async function fetchStores() {
     try {
@@ -24,6 +40,7 @@ const Stores = () => {
       let dataResponse = await response.data;
 
       setStores(dataResponse);
+      handleModalOpen();
     } catch (err) {
       console.error("Erro na requisição:", err);
     }
@@ -71,9 +88,8 @@ const Stores = () => {
       if (!userPlace.geometry || !userPlace.geometry.location) {
         // User entered the name of a userPlace that was not suggested and
         // pressed the Enter key, or the userPlace Details request failed.
-        window.alert(
-          "No details available for input: '" + userPlace.name + "'"
-        );
+        window.alert("Sem detalhes disponíveis para: '" + userPlace.name + "'");
+
         return;
       }
 
@@ -161,6 +177,19 @@ const Stores = () => {
     setMap(null);
   }, []);
 
+  const modelsMap =
+    showModal && window.innerWidth <= 1024
+      ? createPortal(
+          <ModalMap
+            onLoad={onLoad}
+            onUnmount={onUnmount}
+            handleModalClose={handleModalClose}
+            className="modal-map"
+          />,
+          document.body
+        )
+      : isLoaded && <MapStores onLoad={onLoad} onUnmount={onUnmount} />;
+
   return (
     <>
       <h1>Lojas</h1>
@@ -171,16 +200,22 @@ const Stores = () => {
           className="search-store"
           txt="Buscar"
           placeholder="Enter a location"
+          onClick={handleClick}
+          showComponent={modelsMap}
         />
       )}
       {userPlace && (
         <div className="stores">
           <div className="cards-stores">
-            {stores && <StoreCard store={stores} />}
+            {stores && (
+              <StoreCard
+                store={stores}
+                showModal={showModal}
+                handleModalOpen={handleModalOpen}
+              />
+            )}
           </div>
-          <div className="map-store">
-            {isLoaded && <MapStores onLoad={onLoad} onUnmount={onUnmount} />}
-          </div>
+          <div className="map-store">{modelsMap}</div>
         </div>
       )}
     </>

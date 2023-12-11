@@ -11,12 +11,27 @@
 
 .swiper.offers .swiper-button-next:after,
 .swiper.offers .swiper-button-prev:after {
-  color: rgba(26, 26, 26, 1);
+  color: #1a1a1a;
   font-size: 16px;
   font-weight: 900;
-  text-shadow: 0 0 rgba(26, 26, 26, 1);
+  text-shadow: 0 0 #1a1a1a;
 }
 
 .swiper.offers span {
   margin: 0 24px;
+}
+
+.swiper.offers span > a {
+  color: #1a1a1a;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper.offers .swiper-slide {
+    flex-direction: column;
+  }
+
+  .swiper.offers span {
+    font-size: 12px;
+    max-width: 220px;
+  }
 }
