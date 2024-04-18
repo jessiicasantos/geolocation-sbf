@@ -15,7 +15,7 @@ const StoreCard = ({ store, mapCenter, ...props }) => {
             Ver no mapa
           </button>
           <div>
-            <h5>{s.adress}</h5>
+            <h5>{s.address}</h5>
             <p>
               Atendimento: <br />
               Segunda a Sábado 10h às 22h | Domingo 11h às 20h

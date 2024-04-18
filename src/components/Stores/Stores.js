@@ -1,13 +1,21 @@
 import "./Stores.css";
 import { useCallback, useEffect, useState } from "react";
 import Search from "../Search/Search";
-import axios from "axios";
 import StoreCard from "../StoreCard/StoreCard";
 import { useJsApiLoader } from "@react-google-maps/api";
 import MapStores from "../MapStores/MapStores";
 import { config } from "../../lib/config";
 import { distance } from "../../lib/helpers";
 import PinMapa from "../../assets/img/icon_pin_mapa.svg";
+import dataStores from "./stores.json";
+
+const InfoWindow = () => (
+  <div id="infowindow-content">
+    <span id="place-name" className="title"></span>
+    <br />
+    <span id="place-address"></span>
+  </div>
+);
 
 const Stores = () => {
   const [sortedStores, setSortedStores] = useState(false);
@@ -17,11 +25,7 @@ const Stores = () => {
 
   async function fetchStores() {
     try {
-      let response = await axios.get(
-        "https://api.gruposbf.com.br/geolocation-api/stores"
-      );
-
-      let dataResponse = await response.data;
+      let dataResponse = dataStores;
 
       setStores(dataResponse);
     } catch (err) {
@@ -127,6 +131,9 @@ const Stores = () => {
 
   const onLoad = useCallback(
     function callback(map) {
+      const infowindow = new window.google.maps.InfoWindow();
+            const infowindowContent =
+              document.getElementById("infowindow-content");
       stores &&
         stores.forEach((d) => {
           const marker = new window.google.maps.Marker({
@@ -140,15 +147,13 @@ const Stores = () => {
           });
 
           window.google.maps.event.addListener(marker, "click", function () {
-            const infowindow = new window.google.maps.InfoWindow();
-            const infowindowContent =
-              document.getElementById("infowindow-content");
-
-            infowindow.setContent(infowindowContent);
-
-            infowindowContent.children["place-name"].textContent = d.name;
-            infowindowContent.children["place-address"].textContent = d.adress;
-            infowindow.open(map, marker);
+            if(infowindowContent) {
+              infowindowContent.children["place-name"].textContent = d.name;
+              infowindowContent.children["place-address"].textContent = d.address;
+              
+              infowindow.setContent(infowindowContent);
+              infowindow.open(map, marker);
+            }
           });
         });
 
@@ -183,6 +188,7 @@ const Stores = () => {
           </div>
         </div>
       )}
+      <InfoWindow />
     </>
   );
 };

@@ -6,14 +6,6 @@ const containerStyle = {
   height: "600px",
 };
 
-const InfoWindow = () => (
-  <div id="infowindow-content">
-    <span id="place-name" className="title"></span>
-    <br />
-    <span id="place-address"></span>
-  </div>
-);
-
 const MapStores = ({ onLoad, onUnmount, mapCenter }) => {
   return (
     <>
@@ -27,7 +19,6 @@ const MapStores = ({ onLoad, onUnmount, mapCenter }) => {
           streetViewControl: false,
         }}
       />
-      <InfoWindow />
     </>
   );
 };
